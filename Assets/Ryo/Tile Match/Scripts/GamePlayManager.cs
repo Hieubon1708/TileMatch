@@ -290,10 +290,10 @@ public class GamePlayManager : MonoBehaviour
             objUndoBG.gameObject.SetActive(true);
 
 
-            if (Config.CheckTutorial_2() && Config.isShowTut2)
+            /*if (Config.CheckTutorial_2() && Config.isShowTut2)
             {
                 HideTut2();
-            }
+            }*/
         }
         else if (Config.GetCount_ItemHelp(Config.ITEMHELP_TYPE.UNDO) == 0)
         {
@@ -301,7 +301,7 @@ public class GamePlayManager : MonoBehaviour
             OpenBuyItemPopup(Config.ITEMHELP_TYPE.UNDO);
 
         }
-        HideTut_HandGuide();
+        //HideTut_HandGuide();
     }
     #endregion
 
@@ -321,20 +321,10 @@ public class GamePlayManager : MonoBehaviour
         }
         else
         {
-            if (Config.currCoin >= Config.COIN_PRICE_ITEM)
-            {
-                OpenBuyItemPopup(Config.ITEMHELP_TYPE.SUGGEST);
-            }
-            else
-            {
-                OpenBuyItemPopup(Config.ITEMHELP_TYPE.SUGGEST);
-                //OpenFreeItemPopup(Config.ITEMHELP_TYPE.SUGGEST);
-            }
+            OpenBuyItemPopup(Config.ITEMHELP_TYPE.SUGGEST);
 
         }
-
-        HideTut_HandGuide();
-
+        //HideTut_HandGuide();
     }
 
     public void SetSuggestSuccess()
@@ -365,18 +355,9 @@ public class GamePlayManager : MonoBehaviour
         }
         else
         {
-
-            if (Config.currCoin >= Config.COIN_PRICE_ITEM)
-            {
-                OpenBuyItemPopup(Config.ITEMHELP_TYPE.SHUFFLE);
-            }
-            else
-            {
-                //OpenBuyItemPopup(Config.ITEMHELP_TYPE.SHUFFLE);
-                OpenFreeItemPopup(Config.ITEMHELP_TYPE.SHUFFLE);
-            }
+            OpenBuyItemPopup(Config.ITEMHELP_TYPE.SHUFFLE);
         }
-        HideTut_HandGuide();
+        //HideTut_HandGuide();
     }
     #endregion
 
@@ -392,11 +373,6 @@ public class GamePlayManager : MonoBehaviour
 
             Config.SetCurrLevel(level + 1);
             Config.currSelectLevel = Config.currLevel;
-
-            if (level >= 15 && level % 5 == 0 && !Config.GetRate())
-            {
-                OpenRatePopup();
-            }
         }
     }
 
@@ -458,7 +434,6 @@ public class GamePlayManager : MonoBehaviour
     public BuyItemPopup buyItemPopup;
     public void OpenBuyItemPopup(Config.ITEMHELP_TYPE itemHelpType)
     {
-        Config.gameState = Config.GAME_STATE.SHOP;
         buyItemPopup.OpenBuyItemPopup(itemHelpType);
     }
     #endregion

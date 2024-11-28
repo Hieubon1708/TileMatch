@@ -185,7 +185,6 @@ public class ItemTile : MonoBehaviour
         {
             if (itemTileState == Config.ITEMTILE_STATE.FLOOR)
             {
-
                 if (Config.CheckTutorial_1() && !isTileTutorial) return;
                 if (isTileTutorial) GameLevelManager.instance.SetNextTut1(this);
 

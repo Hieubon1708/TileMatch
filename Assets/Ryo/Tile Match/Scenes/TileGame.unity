@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24229,6 +24230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1604852230}
   - component: {fileID: 1604852231}
+  - component: {fileID: 1604852232}
   m_Layer: 0
   m_Name: GamePlayManager
   m_TagString: Untagged
@@ -24282,7 +24284,7 @@ MonoBehaviour:
   winPopup: {fileID: 934206111}
   losePopup: {fileID: 452580283}
   freeItemPopup: {fileID: 529452401}
-  buyItemPopup: {fileID: 0}
+  buyItemPopup: {fileID: 1604852232}
   spinPopup: {fileID: 1860859486}
   chestPopup: {fileID: 1390354121}
   rewardPopup: {fileID: 893762603}
@@ -24294,6 +24296,27 @@ MonoBehaviour:
   ratePopup: {fileID: 2051925198}
   slotBGTranform: {fileID: 892049917}
   shopPopup: {fileID: 1280228084}
+--- !u!114 &1604852232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604852229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1c1858f2c49524fab47101e5c2e76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnClose: {fileID: 0}
+  btnWatchAds: {fileID: 0}
+  popup: {fileID: 0}
+  lockGroup: {fileID: 0}
+  icon: {fileID: 0}
+  txtCount: {fileID: 0}
+  sprite_Undo: {fileID: 0}
+  sprite_Suggest: {fileID: 0}
+  sprite_Shuffle: {fileID: 0}
 --- !u!1 &1619422416
 GameObject:
   m_ObjectHideFlags: 0

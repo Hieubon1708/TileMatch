@@ -20,20 +20,6 @@ public class BuyItemPopup : MonoBehaviour
     {
         instance = this;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        btnClose.OnPointerClickCallBack_Completed.AddListener(TouchClose);
-        btnWatchAds.OnPointerClickCallBack_Completed.AddListener(TouchBuyItem);
-
-        popup.GetComponent<BBUIView>().HideBehavior.onCallback_Completed.AddListener(HidePopup_Finished);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private ConfigItemShopData configItemShop;
     public void OpenBuyItemPopup(Config.ITEMHELP_TYPE itemType)
@@ -42,10 +28,8 @@ public class BuyItemPopup : MonoBehaviour
         configItemShop.shopItemType = Config.ConvertItemHelpTypeToShopItem(itemType);
         configItemShop.countItem = 1;
         configItemShop.price = Config.COIN_PRICE_ITEM;
-
-        ShowRewardItem();
-        gameObject.SetActive(true);
-        InitViews();
+        Config.BuySucces_ItemShop(configItemShop);
+        GamePlayManager.instance.SetFreeItem_Success();
     }
 
     private void ShowRewardItem()
@@ -73,12 +57,9 @@ public class BuyItemPopup : MonoBehaviour
     }
     public void TouchBuyItem()
     {
-        Debug.LogWarning("asjhdkj");
         if (Config.currCoin >= configItemShop.price)
         {
-            Config.SetCoin(Config.currCoin - configItemShop.price);
-            Config.BuySucces_ItemShop(configItemShop);
-            GamePlayManager.instance.SetFreeItem_Success();
+            Config.SetCoin(Config.currCoin - configItemShop.price);       
 
             NotificationPopup.instance.AddNotification("Buy Success!");
         }

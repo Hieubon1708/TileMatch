@@ -929,7 +929,7 @@ public class GameLevelManager : MonoBehaviour
         Debug.Log("ShowTut1_HandGuildShowTut1_HandGuild");
         if (handGuild == null)
         {
-            handGuild = Instantiate(Resources.Load("HandGuide"), gameObject.transform) as GameObject;
+            //handGuild = Instantiate(Resources.Load("HandGuide"), gameObject.transform) as GameObject;
         }
 
         float posX = listItemTile_Tutorials[0].transform.position.x;
